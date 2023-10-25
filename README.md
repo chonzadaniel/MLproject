@@ -74,4 +74,4 @@ Using train_test_split() method imported from sklearn.model_selection was able t
 * Given the need for imbalanced dataset handling such that iteration of different approach will be needed trying out to get high model performance metrics, Model predictive power, easy to handle and computation simplist, drove the selection of the Machine Learning Model.
 * Long-Short Term Memory (LSTM) Machine Learning, which is a Recurring Neuron Network (RNN) model was preferred over Logistic Regression, Random Forest, and Xgboos models.
 * LSTM ability to handle Vanishing Gradient Problem, ability to train efficiently on time series dataset, and with number of epochs flexibility are key LSTM model selection points creteria.
-* <img src*https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.projectpro.io%2Farticle%2Flstm-model%2F832&psig=AOvVaw22T0_Z2YJc5mxvu4TeVhPF&ust=1698322169030000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCIDR2KCVkYIDFQAAAAAdAAAAABAE>
+* <img src="https://modeling-languages.com/wp-content/uploads/2019/07/Architecture-EncoderDecoder_v2-1080x453.png">

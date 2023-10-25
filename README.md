@@ -92,14 +92,14 @@ Using train_test_split() method imported from sklearn.model_selection was able t
 
 ## Building a callable functional Long-Short Term Memory Mode to predict whether creditcard transactions are fraudulent or not:
 * A function of the LSTM model containing:
-  ####
+  #### Pipeline
   * The number of LSTM units, learning rate, and batch size.
   * Sequential,
   * Dense: activation made using sigmoid for a binary classifier.
   * Model optimizer using 'Adam' at 0.001 learning rate.
   * Compiling the Model where loss is equal to the binary cross entropy, with the above optimizer, and accuracy being the central model metric.
 * A function to handle the training and model testing/evaluating/validation on unseen dataset.
-  ###
+  ### Pipeline
   * LSTM Model defined in the basis of X_train, y_train, X_test, y_test, and apochs = 'n' where n = number of preferred epochs running the model.
   * Storing the model history by fitting LSTM model with 64 batche size.
   * Storing the y_predictions using the predict() method on the unseen dataset.

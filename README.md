@@ -79,6 +79,7 @@ Using train_test_split() method imported from sklearn.model_selection was able t
 * LSTM ability to handle Vanishing Gradient Problem, ability to train efficiently on time series dataset, and with number of epochs flexibility are key LSTM model selection points creteria.
   #### LSTM Model Structure
 <img src="https://modeling-languages.com/wp-content/uploads/2019/07/Architecture-EncoderDecoder_v2-1080x453.png">
+  Source: https://modeling-languages.com/lstm-neural-network-model-transformations/
 
 # Building the Model:
 ## Importing the Important Libraries to support the model training and testing/evaluating, reporting, and visualization

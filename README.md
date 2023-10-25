@@ -10,6 +10,9 @@ A credit card is one of the most used financial products to make online purchase
 # Project Objective:
 To build a Machine Learning classification model with a Classifier to predict whether a creditcard transaction is fraudulent or not. The project aims at testing the personal skills in Machine Learning Model building aiming at building a classifier with a predictive power with accuracy above 75%.
 
+# Programming Language used:
+Python language is used throughout the project.
+
 # Project Methodology:
 ## To Accomplish the Project Below are the Methodological Steps to Follow:
 * Data Collection.
@@ -74,4 +77,49 @@ Using train_test_split() method imported from sklearn.model_selection was able t
 * Given the need for imbalanced dataset handling such that iteration of different approach will be needed trying out to get high model performance metrics, Model predictive power, easy to handle and computation simplist, drove the selection of the Machine Learning Model.
 * Long-Short Term Memory (LSTM) Machine Learning, which is a Recurring Neuron Network (RNN) model was preferred over Logistic Regression, Random Forest, and Xgboos models.
 * LSTM ability to handle Vanishing Gradient Problem, ability to train efficiently on time series dataset, and with number of epochs flexibility are key LSTM model selection points creteria.
-* <img src="https://modeling-languages.com/wp-content/uploads/2019/07/Architecture-EncoderDecoder_v2-1080x453.png">
+  #### LSTM Model Structure
+<img src="https://modeling-languages.com/wp-content/uploads/2019/07/Architecture-EncoderDecoder_v2-1080x453.png">
+
+# Building the Model:
+## Importing the Important Libraries to support the model training and testing/evaluating, reporting, and visualization
+* from keras.models import Sequential
+* from keras.layers import LSTM, Dense
+* from keras.optimizers import Adam
+* from sklearn.metrics import confusion_matrix, classification_report
+* import seaborn as sns
+* import matplotlib.pyplot as plt
+
+## Building a callable functional Long-Short Term Memory Mode to predict whether creditcard transactions are fraudulent or not:
+* A function of the LSTM model.
+* A function to handle the training and model testing/evaluating/validation on unseen dataset.
+* A function to handle confusion matrix plotting for proper visualization of the model power to predict Class nature.
+* A portion of the function to cover calculation of model performance metrics.
+* A portion of the function to print the classification report to see the Model Precision, Recall, F1-Score, and Accuracy
+* A line to return the y predictions.
+
+## Calling the y predictions:
+* Users may change the number of epochs in maximizing the predictive power of the model in terms of performance metrics
+* Note further that, wih less number of epochs, the first y_preds given zeros (0) on the fraudulant class (1) because of the missing fraudulent incendencies. This requires then handling of the imbalanced datasets.
+
+### Handling the Imbalanced Dataset
+* Given that there is near to zero values on the fraudulent class (1), undersampling technique was dropped in favour of Oversampling and Sythetic Minority Oversampling technique (SMOTE)
+* Given the visualization of the confusion matrix and classification report, SMOTE method was preferred.
+* SMOTE() method was applied on the undersample (1 Class) after importing it from the imblearn.over_samplling
+* Resampled values then applied to update the y_preds. Both the general classification report and confusion matrix provided plausible consistent metrics about the model.
+
+#### Importance of 'SMOTE' over 'oversampling' technique:
+* Preservation of Information: SMOTE generates synthetic samples that preserve the original information present in the minority class, reducing the risk of overfitting, which can occur with the traditional oversampling technique.
+* Reduced Overfitting: Traditional oversampling methods duplicate existing samples while SMOTE creates new and diverse samples that help in reducing the risk of overfitting.
+* Improved Generalization: SMOTE encourages the model to generalize better by providing more diverse examples of the minority class leading to a more robust model that performs well on unseen data.
+* Better Boundary Learning: SMOTE helps the model learn the decision boundary between classes more effectively, as it introduces samples along the class boundary. This can lead to a model that makes more accurate predictions.
+* Balanced Dataset: SMOTE aims to balance the class distribution while avoiding excessive oversampling. In contrast, traditional oversampling could produce a too large and computationally expensive dataset.
+* Reduced Bias: SMOTE reduces the bias introduced by oversampling because it generates synthetic samples based on the distribution of the minority class, ensuring that the synthetic samples represent the true characteristics of the minority class. Wider
+
+# Model Usability:
+* Potential for Cost Savings: Using this model by the Bank may save money in preventing fraudulent transactions. It can also improve customer satisfaction by reducing the number of legitimate transactions incorrectly flagged as fraudulent.
+* Model Resilience and reliability. This model may maintain its fraudulent predictive power (performance) on unseen data, which is important in a real-world setting where  transactions distribution changes over time.
+* Monitoring and Adaptation: Even with a high-performing model, it's essential to continuously monitor its performance and adapt it as needed. Fraudsters can change their tactics, and the model should be updated to address evolving threats related to creditcards' transactions.
+* Customer Communication: In the banking domain, clear communication with customers is essential. Customers should be informed about the bank's fraud detection methods and how they can protect themselves. An overzealous fraud detection system may sometimes lead to customer inconvenience.
+* Marketing Strategy: The bank may use the high-performance model promoting itself as a secure place to conduct financial transactions, emphasizing the commitment to protecting customers from fraud.
+* Regulatory Compliance: Ensure that the model complies with relevant regulations and data privacy laws. Transparency in model development and usage is critical.
+* Education and Training: Continuously educating and training the Bank employees on how to use and interpret the model results, as well as how to take appropriate actions when fraud is suspected.
